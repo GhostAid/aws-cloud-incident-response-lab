@@ -1,3 +1,7 @@
+## Project Files
+
+- [Incident Timeline](incident-timeline.md)
+- [Findings Report](findings.md)
 # AWS Cloud Incident Response Lab
 
 ## Overview
@@ -27,6 +31,11 @@ CloudTrail logs were reviewed to identify suspicious activity and reconstruct an
 - Cloud Security
 - Incident Response
 - AWS IAM
+- AWS CloudTrail
+- AWS CLI
+- Threat Hunting
+- Log Analysis
+- Security Monitoring
 
 - ## Architecture Diagram
 
