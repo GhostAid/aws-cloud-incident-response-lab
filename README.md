@@ -31,6 +31,8 @@ CloudTrail logs were reviewed to identify suspicious activity and reconstruct an
 - ## Architecture Diagram
 
 ![Architecture Diagram](https://github.com/GhostAid/aws-cloud-incident-response-lab/blob/main/architecture-diagram.PNG)
+**Note:** The "Attacker / Tester" component represents a controlled simulation performed by the project author using AWS CLI and test credentials to generate CloudTrail events for incident response analysis.
+
 
 ## Lessons Learned
 
