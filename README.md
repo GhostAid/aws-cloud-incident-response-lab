@@ -30,7 +30,7 @@ CloudTrail logs were reviewed to identify suspicious activity and reconstruct an
 
 - ## Architecture Diagram
 
-![Architecture Diagram](diagrams/architecture-diagram.png)
+![Architecture Diagram](https://github.com/GhostAid/aws-cloud-incident-response-lab/blob/main/architecture-diagram.PNG)
 
 ## Lessons Learned
 
