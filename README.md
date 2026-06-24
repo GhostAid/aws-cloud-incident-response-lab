@@ -27,5 +27,25 @@ CloudTrail logs were reviewed to identify suspicious activity and reconstruct an
 - Cloud Security
 - Incident Response
 - AWS IAM
+
+- ## Architecture Diagram
+
+![Architecture Diagram](diagrams/architecture-diagram.png)
+
+## Lessons Learned
+
+- AWS CloudTrail provides valuable visibility into account activity and API calls.
+- Least-privilege IAM permissions help prevent unauthorized actions.
+- Reconnaissance activities such as ListBuckets and ListUsers can indicate early stages of an attack.
+- CloudTrail logs can be used to reconstruct an attack timeline during investigations.
+- Proper logging and monitoring are essential for cloud incident response.
+## Future Improvements
+
+- Develop a Python-based CloudTrail log parser.
+- Create automated alerts using Amazon CloudWatch.
+- Integrate CloudTrail logs into Wazuh for centralized monitoring.
+- Build custom detection rules for IAM privilege escalation attempts.
+- Implement automated response actions using AWS Lambda.
+- Expand the lab to include multiple AWS accounts and cross-account monitoring.
 - CloudTrail Analysis
 - Threat Hunting
