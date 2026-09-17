@@ -9,15 +9,15 @@ A simulated compromised IAM user (`victim-user`) was used to perform reconnaissa
 | 21:19 | GetCallerIdentity | victim-user | 102.89.34.71 | AccessDenied | Attempted to verify AWS account identity using compromised credentials. |
 | 21:20 | ListBuckets | victim-user | 102.89.34.71 | AccessDenied | Attempted enumeration of S3 buckets within the AWS account. |
 | 21:21 | ListBuckets | victim-user | 102.89.34.71 | AccessDenied | Repeated S3 enumeration attempt, indicating continued reconnaissance activity. |
-| 21:34 | CreateUser | victim-user | 102.89.34.71 | AccessDenied | Unauthorized attempt to create a new IAM user, potentially indicating privilege escalation efforts. |
-| 21:39 | ListUsers | victim-user | 102.89.34.71 | AccessDenied | Attempted enumeration of IAM users to identify privileged accounts and expand access. |
+| 21:34 | CreateUser | victim-user | 102.89.34.71 | AccessDenied | Unauthorized attempt to create a new IAM user, potential persistence or account manipulation activity. |
+| 21:39 | ListUsers | victim-user | 102.89.34.71 | AccessDenied | Attempted enumeration of IAM users to identify existing IAM identities that could be relevant to further access attempts. |
 
 ## Findings
 
 - All activity originated from the same source IP address.
 - The account performed cloud resource reconnaissance.
 - Multiple IAM-related actions were denied.
-- Activity resembles an attacker attempting discovery and privilege escalation.
+- The sequence of events is consistent with reconnaissance and attempted IAM account manipulation. All observed requests were denied, and the available evidence does not demonstrate successful privilege escalation or resource modification.   
 
 ## Containment Actions
 
