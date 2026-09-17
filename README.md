@@ -20,12 +20,30 @@ This project simulates a compromised IAM user in AWS and investigates the result
 - CreateUser
 
 ## Investigation
-CloudTrail logs were reviewed to identify suspicious activity and reconstruct an attack timeline.
 
+CloudTrail logs were reviewed to identify suspicious API activity and reconstruct an attack timeline.
+
+The investigation correlated events using the IAM username and source IP address. The observed sequence included GetCallerIdentity, repeated ListBuckets requests, CreateUser, and ListUsers.
+
+All observed requests returned AccessDenied, confirming that the IAM permissions assigned to victim-user prevented the simulated actions from succeeding.
 ## Findings
+
 - Reconnaissance activity detected
-- IAM enumeration attempts observed
-- Privilege escalation attempt blocked by IAM policies
+- S3 resource enumeration attempts observed through ListBuckets
+- IAM identity enumeration observed through ListUsers
+- IAM account manipulation attempt observed through CreateUser
+- All observed API requests returned AccessDenied
+- No evidence of successful resource modification, account creation, or privilege escalation was identified
+
+## MITRE ATT&CK Mapping
+
+The observed activity was mapped to relevant MITRE ATT&CK techniques to provide a standardized view of the simulated behavior.
+
+- ListBuckets — Cloud Storage Object Discovery (T1619)
+- ListUsers — Account Discovery (T1087)
+- CreateUser — Account Manipulation (T1098)
+
+The mappings represent attempted activity observed in CloudTrail. They do not indicate successful execution because all recorded requests returned AccessDenied.
 
 ## Skills Demonstrated
 - Cloud Security
@@ -58,5 +76,4 @@ CloudTrail logs were reviewed to identify suspicious activity and reconstruct an
 - Build custom detection rules for IAM privilege escalation attempts.
 - Implement automated response actions using AWS Lambda.
 - Expand the lab to include multiple AWS accounts and cross-account monitoring.
-- CloudTrail Analysis
-- Threat Hunting
+  
